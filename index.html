@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mira AI</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+        }
+        .chat-box {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .message {
+            margin: 10px 0;
+        }
+        .user {
+            text-align: right;
+        }
+        .mira {
+            text-align: left;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="chat-box">
+    <h2>Mira AI 💬</h2>
+
+    <div id="chat"></div>
+
+    <input type="text" id="input" placeholder="Type message...">
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+function sendMessage() {
+    let input = document.getElementById("input");
+    let chat = document.getElementById("chat");
+
+    let userMsg = input.value;
+
+    chat.innerHTML += `<div class="message user">${userMsg}</div>`;
+
+    // Dummy Mira reply
+    let reply = "Mujhe samajh aa raha hai... thoda aur batao 🙂";
+
+    chat.innerHTML += `<div class="message mira">${reply}</div>`;
+
+    input.value = "";
+}
+</script>
+
+</body>
+</html>
